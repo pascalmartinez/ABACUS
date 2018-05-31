@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'speedy_rg';
+    src: url('fty_speedy_casual_001_ncv-webfont.woff2') format('woff2'),
+         url('fty_speedy_casual_001_ncv-webfont.woff') format('woff'),
+         url('fty_speedy_casual_001_ncv-webfont.ttf') format('truetype'),
+         url('fty_speedy_casual_001_ncv-webfont.svg#speedy_rg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'speedy_regular';
+    src: url('fty_speedy_casual_ncv-webfont.woff2') format('woff2'),
+         url('fty_speedy_casual_ncv-webfont.woff') format('woff'),
+         url('fty_speedy_casual_ncv-webfont.ttf') format('truetype'),
+         url('fty_speedy_casual_ncv-webfont.svg#speedy_regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
