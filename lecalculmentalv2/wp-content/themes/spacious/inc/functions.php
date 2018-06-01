@@ -550,7 +550,7 @@ if ( ! function_exists( 'spacious_footer_copyright' ) ) :
 
 		$tg_link = '<a href="' . esc_url( 'https://themegrill.com/themes/spacious' ) . '" target="_blank" title="' . esc_attr__( 'ThemeGrill', 'spacious' ) . '" rel="author"><span>' . __( 'ThemeGrill', 'spacious' ) . '</span></a>';
 
-		$default_footer_value = sprintf( __( 'Copyright &copy; %1$s %2$s.', 'spacious' ), date( 'Y' ), $site_link ) . ' ' . sprintf( __( 'Powered by %s.', 'spacious' ), $wp_link ) . ' ' . sprintf( __( 'Theme: %1$s by %2$s.', 'spacious' ), 'Spacious', $tg_link );
+		$default_footer_value = sprintf( __( 'Copyright &copy; %1$s %2$s.', 'spacious' ), date( 'Y' ), $site_link ) . '<br> ' . sprintf( __( 'Site réalisé par Emmanuelle et Pascal, étudiants à AFORMAC ' )) ;
 
 		$spacious_footer_copyright = '<div class="copyright">' . $default_footer_value . '</div>';
 		echo $spacious_footer_copyright;
