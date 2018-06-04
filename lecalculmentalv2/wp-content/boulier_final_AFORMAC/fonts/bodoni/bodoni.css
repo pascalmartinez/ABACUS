@@ -1,9 +1,0 @@
-@font-face {
-    font-family: 'bodonirecutregular';
-    src: url('bodonirecut-regular-webfont.woff2') format('woff2'),
-         url('bodonirecut-regular-webfont.woff') format('woff'),
-         url('bodonirecut-regular-webfont.ttf') format('truetype'),
-         url('bodonirecut-regular-webfont.svg#bodonirecutregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
