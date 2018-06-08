@@ -37,19 +37,21 @@
         <div class="container section" >
             <div class="row">
                 <div class="col-10 col-md-3">
-                    <div class="jumbotron">
-                        <h3 >Exercice n°<?php $stmt = selectNumExo($connect);  afficherNumExo($stmt, $connect); ?> </h3>
+
                         <?php
                         $stmt = selectExo($connect);
                         $stmt = afficherExo($stmt, $connect);
                         // $stmt = afficherExo($stmt, $connect);
                         // echo "balance ton exo!!!";
                         ?>
-                    </div>
+
                 </div>
 
             </div>
 
         </div>
+        <script type="text/javascript" src="js/jqueryExo.js"></script>
+
+
     </body>
 </html>
