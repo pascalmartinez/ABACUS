@@ -1,13 +1,19 @@
 <?php
-include('login.php');
+// include('login.php');
+$servername = "localhost";
+$username = "root";
+$password = "admin";
+
 
 	function connect(){
 		try{
 
-    		$bdd = new PDO('mysql:host=localhost;dbname=calculBddMichel;charset=utf8', getUser(), getMdp());
-    		return $bdd;
+    		$bdd = new PDO("mysql:host=$servername;dbname=calculBddMichel;charset=utf8", $username, $password);
+			$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  			echo "Connected successfully";
+			// return $bdd;
 		}
-		catch(Exception $e){
+		catch(PDOException $e){
 
         	die('Erreur : '.$e->getMessage());
 		}
