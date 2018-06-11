@@ -5,7 +5,7 @@
 function afficherNiveau($stmt){
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
         while($row = $stmt->fetch()) {
-            echo "<option value=".$row['Exo.id_Difficulte']." >".$row['niveau']."</option>";
+            echo "<option value=".$row['id_Difficulte']." >".$row['niveau']."</option>";
         }
     }
 

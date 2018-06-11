@@ -10,9 +10,10 @@
         include 'BDD/function_select_exo.php';
         include 'function_affiche_exo.php';
         include 'BDD/ConnectBDD.php';
+        // include 'php/action.php';
 
         ?>
-        <title>C'est parti!!!</title>
+        <title>A toi de jouer!!!</title>
     </head>
     <body >
         <?php $connect = connectDB(); ?>
@@ -23,13 +24,15 @@
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputNiveau">Niveau</label>
                         </div>
-                        <select class="custom-select col-7 col-md-6" id="inputNiveau">
+                        <select class="custom-select col-7 col-md-6" id="main">
+
                             <?php
                             $stmt = selectNiveau($connect);
-                            afficherNiveau($stmt, $connect);
+                            $stmt = afficherNiveau($stmt, $connect);
                             // echo "balance ton niveau!!!";
                             ?>
                         </select>
+
                     </div>
                 </div>
             </div>
@@ -51,6 +54,9 @@
 
         </div>
         <script type="text/javascript" src="js/jqueryExo.js"></script>
+        <script type="text/javascript" src="js/selectLevel.js">
+
+        </script>
 
 
     </body>
