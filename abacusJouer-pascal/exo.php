@@ -27,10 +27,12 @@
                         <select class="custom-select col-7 col-md-6" id="main">
 
                             <?php
+
                             $stmt = selectNiveau($connect);
                             $stmt = afficherNiveau($stmt, $connect);
                             // echo "balance ton niveau!!!";
                             ?>
+
                         </select>
 
                     </div>
