@@ -4,10 +4,9 @@
 //Permet la selection du niveau
     function selectNiveau($connect){
       try{
-        $stmt = $connect->prepare("SELECT Difficulte.niveau, Exo.id_Difficulte
-
+        $stmt = $connect->prepare("SELECT Difficulte.niveau,Difficulte.classe
         FROM Difficulte
-        INNER JOIN Exo ON Difficulte.niveau=Exo.id_Difficulte
+        
         ");
         $stmt->execute();
         return $stmt;
@@ -19,12 +18,11 @@
 //Permet d'afficher l'exercice en fonction du niveau
     function selectExo($connect){
       try{
-        $stmt = $connect->prepare("SELECT Exo.id, titre, enonce, url_img, Difficulte.niveau, Info.auteur
-            FROM Exo
-            INNER JOIN Difficulte ON Difficulte.niveau=Exo.id_Difficulte
-            INNER JOIN Users ON Users.classe=Difficulte.niveau
-            INNER JOIN Info ON Exo.id_Info=Info.id
-            WHERE Difficulte.niveau=Exo.id_Difficulte
+        $stmt = $connect->prepare("SELECT Exo.id, Exo.id_difficulte, titre, enonce, url_img, Difficulte.niveau, Info.auteur
+        FROM Exo
+        INNER JOIN Difficulte ON Difficulte.niveau=Exo.id_Difficulte
+        INNER JOIN Info ON Exo.id_Info=Info.id
+        WHERE Exo.id_Difficulte=Difficulte.niveau
         ");
 
         $stmt->execute();
