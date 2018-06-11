@@ -1,18 +1,36 @@
 <?php
-include('login.php');
 
-	function connect(){
-		try{
+    function connectDB(){
 
-    		$bdd = new PDO('mysql:host=localhost;dbname=BDD_BLOG;charset=utf8', getUser(), getMdp());
-    		return $bdd;
-		}
-		catch(Exception $e){
+        $servername = "localhost";
 
-        	die('Erreur : '.$e->getMessage());
-		}
+        $username = "root";
 
-  	die('Erreur : '.$e->getMessage());
-		}
+        $password = "Alchimie12";
+
+        $dbname = "calculBddMichel";
+        
+
+
+        try {
+
+            $connect = new PDO("mysql:host=$servername;dbname=$dbname; charset=utf8", $username, $password);
+
+            // set the PDO error mode to exception
+
+            $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+						echo "Connection ok";
+            return $connect;
+
+            }
+
+            catch(PDOException $e)
+        {
+        echo "Connection failed: " . $e->getMessage();
+        }
+
+    }
+
+		connectDB();
 
 ?>
