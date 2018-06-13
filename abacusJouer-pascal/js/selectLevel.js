@@ -1,9 +1,8 @@
-function changeSelect(event){
-    var idC = $("#inputNiveau option:selected").val();
-
-    $("#main").load("php/action.php", "idc="+idC);
-}
-
 $(document).ready(function(){
-    $("#inputNiveau").change(changeSelect);
+	$("#test").change(function(){
+		var id = $("#test option:selected").val();
+
+
+    $("#main").load("php/action.php", "id="+id);
+	});
 });
