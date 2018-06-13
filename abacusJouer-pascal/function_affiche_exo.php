@@ -2,19 +2,13 @@
 <?php
 
 //SELECT du niveau de jeux
-function afficherNiveau($stmt){
+function afficherSelectNiveau($stmt){
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
         while($row = $stmt->fetch()) {
-            echo "<option value=".$row['id_Difficulte']." >".$row['niveau']."</option>";
+            echo "<option value=".$row['id'].">".$row['niveau']."</option>";
         }
     }
 
-    // function afficherNiveau($stmt){
-    //         $stmt->setFetchMode(PDO::FETCH_ASSOC);
-    //         while($row = $stmt->fetch()) {
-    //             echo "<option value=".$row['Difficulte.id']." >".$row['niveau']."</option>";
-    //         }
-    //     }
 
 //SELECT de l'exo
     function afficherExo($stmt){
@@ -28,7 +22,7 @@ function afficherNiveau($stmt){
 
         if($row['url_img'] != "")
                     {
-                    echo "<img id='my_image'".$row['url_img']."' alt='img Exo'>";
+                        echo "<img id='my_image' class='card-img-top' src='sources/images/".$row['url_img']."' alt='img article'>";
                     }
 
                     echo "<div class='card-body'>

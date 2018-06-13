@@ -10,13 +10,15 @@
         include 'BDD/function_select_exo.php';
         include 'function_affiche_exo.php';
         include 'BDD/ConnectBDD.php';
-        // include 'php/action.php';
+
 
         ?>
         <title>A toi de jouer!!!</title>
     </head>
     <body >
+
         <?php $connect = connectDB(); ?>
+
         <div class="container section" >
             <div class="row">
                 <div class="col-10 col-md-3">
@@ -24,12 +26,13 @@
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputNiveau">Niveau</label>
                         </div>
-                        <select class="custom-select col-7 col-md-6" id="main">
+                        <select id ="test" class="custom-select col-6 col-md-4">
 
-                            <?php
-
+                           <?php
                             $stmt = selectNiveau($connect);
-                            $stmt = afficherNiveau($stmt, $connect);
+
+                            $stmt = afficherSelectNiveau($stmt,$connect);
+
                             // echo "balance ton niveau!!!";
                             ?>
 
@@ -41,7 +44,9 @@
         </div>
         <div class="container section" >
             <div class="row">
-                <div class="col-10 col-md-3">
+                <div class="col-6" id="main">
+                    <!-- alors j'ai renommé les id faut que tu rechanges :x -->
+                    <!-- dans le fichier js aussi du coup -->
 
                         <?php
                         $stmt = selectExo($connect);
@@ -55,10 +60,14 @@
             </div>
 
         </div>
-        <script type="text/javascript" src="js/jqueryExo.js"></script>
-        <script type="text/javascript" src="js/selectLevel.js">
+        <script  src="includes/jquery-3.3.1.min.js"></script>
 
-        </script>
+        <script type="text/javascript" src="js/selectLevel.js"></script>
+        <!-- <script type="text/javascript" src="js/jqueryExo.js"></script> -->
+
+
+
+
 
 
     </body>
