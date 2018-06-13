@@ -14,6 +14,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
     <!-- Ajout d'une nouvelle feuille de style qui sera spécifique à notre thème -->
+    <link rel="stylesheet" href="../css/style.css">
     <!-- <link href="<?php //bloginfo('template_directory');?>/blog.css" rel="stylesheet">
     <base href="/site_cv/wordpress/wp-content/themes/spacious/" target="_blank"> -->
 
