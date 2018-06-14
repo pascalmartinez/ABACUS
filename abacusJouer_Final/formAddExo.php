@@ -2,11 +2,11 @@
 <html>
   <head>
     <?php
-        include '../includes/header.php';
-        include '../modele/ConnectBDD.php';
-        include '../modele/functionAddExo.php';
-        include '../modele/function_selection.php';
-        include '../controleur/function_affichage.php';
+        include 'includes/header.php';
+        include 'BDD/ConnectBDD.php';
+        include 'BDD/functionAddExo.php';
+        include 'BDD/function_selection.php';
+        include 'includes/function_affichage.php';
         // include '../controleur/traitformAddExo.php';
     ?>
   </head>

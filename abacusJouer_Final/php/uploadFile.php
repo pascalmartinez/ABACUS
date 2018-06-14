@@ -1,7 +1,7 @@
-<?php
+<?php 
     function fichier(){
         //Gère la partie upload image
-
+        
         $target_dir = "../sources/images/";
         $target_file = $target_dir .basename ($_FILES["fichier"]["name"]);
 
@@ -19,7 +19,7 @@
                 echo "Le fichier n'a pas était chargé! Merci de réessayer";
             }
 
-            header("Location: ../vue/formAddExo.php");
+            header("Location: ../index.php");
         }
         catch(Exception $e){
                 echo "Request failed : " . $e->getMessage();
