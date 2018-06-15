@@ -24,7 +24,7 @@
                 <div class="body">
                     <h5 class="formulaire-title">Partie nomenclature</h5>
                     <div class="form-group">
-                        <form class="container formulaire" action="../modele/traitformAddExo.php" enctype="multipart/form-data" method="post">
+                        <form class="container formulaire" action="BDD/traitformAddExo.php" enctype="multipart/form-data" method="post">
                             <div class="form-title">
                                 <label for="selectCategorie form-title">Selectioner le nom de l'auteur</label>
                                 <select class="form-control form-field" id="selectidInfo" name="id_info">
