@@ -1,0 +1,18 @@
+Reste à faire sur le projet:
+
+
+Partie visualistation exo:
+1/partie réponse =table réponse users à créer plus la lier avec celle de info reponse (à créer également)
+2/inclure les cookies
+3/gérer la session et les scores
+4/prévoir l'affichage des exos 1 par 1 et limite à X exo sur une partie
+
+partie admin:
+1/cookie
+2/réponse
+
+
+sur l'ensemble du projet
+1/prévoir affichage cohérent sur les deux parties :CSS
+2/gérer l'intégration de ces parties sur Wordpress
+

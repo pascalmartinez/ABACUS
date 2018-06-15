@@ -22,7 +22,7 @@ function afficherSelectNiveau($stmt){
 
         if($row['url_img'] != "")
                     {
-                        echo "<img id='my_image' class='card-img-top' src='../sources/images/".$row['url_img']."' alt='img article'>";
+                        echo "<img id='my_image' class='card-img-top' src='sources/images/".$row['url_img']."' alt='img exo'>";
                     }
 
                     echo "<div class='card-body'>

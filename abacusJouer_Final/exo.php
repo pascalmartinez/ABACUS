@@ -30,14 +30,11 @@
 
                            <?php
                             $stmt = selectNiveau($connect);
-
                             $stmt = afficherSelectNiveau($stmt,$connect);
-
                             // echo "balance ton niveau!!!";
                             ?>
 
                         </select>
-
                     </div>
                 </div>
             </div>
@@ -45,8 +42,6 @@
         <div class="container section" >
             <div class="row">
                 <div class="col-6" id="main">
-                    <!-- alors j'ai renommé les id faut que tu rechanges :x -->
-                    <!-- dans le fichier js aussi du coup -->
 
                         <?php
                         $stmt = selectExo($connect);
@@ -56,18 +51,12 @@
                         ?>
 
                 </div>
-
             </div>
-
         </div>
         <script  src="includes/jquery-3.3.1.min.js"></script>
 
         <script type="text/javascript" src="js/selectLevel.js"></script>
         <!-- <script type="text/javascript" src="js/jqueryExo.js"></script> -->
-
-
-
-
 
 
     </body>

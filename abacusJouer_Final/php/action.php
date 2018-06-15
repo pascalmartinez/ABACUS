@@ -1,6 +1,6 @@
 <?php
      include '../BDD/ConnectBDD.php';
-     include '../function_affiche_exo.php';
+     include '../includes/function_affiche_exo.php';
      include '../BDD/function_select_exo.php';
      //besoin des includes, sinon il est perdu
 
