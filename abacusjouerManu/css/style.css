@@ -1,4 +1,5 @@
 body{
+    height: 100%;
     background-image: url(../sources/images/board.jpg);
     background-repeat: no-repeat;
     background-size: cover;

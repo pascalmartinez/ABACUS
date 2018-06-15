@@ -1,43 +1,90 @@
 <?php
 
 function ajoutInfo($connect, $auteur, $fichetechnique, $codecapacite, $etape, $secteur, $codenaf){
-  $req = $connect->prepare('INSERT INTO Info (id, auteur, fichetechnique, codecapacite, etape, secteur, codenaf) VALUES(?,?,?,?,?,?,?)');
-  $req->execute(array($auteur, $fichetechnique, $codeCap, $etape, $secteur, $codenaf));
-  $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  // return $connect->lastInsertId();
+  $req = $connect->prepare("INSERT INTO infos (auteur, fichetechnique, codecapacite, etape, secteur, codenaf)
+                            VALUES(:auteur, :fichetechnique, :codecapacite, :etape, :secteur, :codenaf)");
+  $req->execute(array(
+      'auteur' => $auteur,
+      'fichetechnique' => $fichetechnique,
+      'codecapacite' => $codecapacite,
+      'etape' => $etape,
+      'secteur' => $secteur,
+      'codenaf' => $codenaf
+  ));
+  echo "Nouvel info enregistré";
 }
 
-function ajoutExo($connect, $id, $titre, $enonce, $id_Info, $id_difficulte){
-  $req = $connect->prepare('INSERT INTO Exo (id, titre, enonce, id_Info, id_difficulte)
-      VALUES (?,?,?,?,?)');
-  $req->execute(array($id, $titre, $enonce, $id_Info, $id_difficulte));
-  $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+function ajoutExo($connect, $titre, $enonce, $id_Info, $id_difficulte){
+  $req = $connect->prepare("INSERT INTO exos (titre, enonce, $id_Info, $id_difficulte)
+                            VALUES(:titre, :enonce, :id_Info, :id_difficulte)");
+    $req->execute(array(
+      'titre' => $titre,
+      'enonce' => $enonce,
+      'id_Info' => $id_Info,
+      'id_difficulte' => $id_difficulte
+    ));
+  echo "Nouvel exo enregistré";
 }
 
-function difficulte($connect){
-  $req = $connect->query('SELECT * FROM Difficulte');
-  return $req;
+function id_Info($connect, $auteur){
+  try {
+    $reponse = $connect->prepare("SELECT * FROM infos WHERE auteur = '".$auteur."'");
+    $reponse->execute();
+    $row = $reponse->fetch();
+    $id_Info = $row['id'];
+    return $id_Info;
+  }catch (Exception $e) {
+      die("Oh noes! There's an error in the query!");
+  }
+}
+
+function id_difficulte($connect, $id_difficulte){
+  try{
+    $reponse = $connect->prepare("SELECT id FROM difficultes WHERE niveau = '".$id_difficulte."'");
+    $reponse->execute();
+    $row = $reponse->fetch();
+    $id_difficulte = $row['id'];
+    return $id_difficulte;
+  }catch (Exception $e) {
+      die("Oh noes! There's an error in the query categire! ($id_difficulte)".$e);
+  }
 }
 
 function nomAuteur($connect){
-  $req = $connect->query('SELECT * FROM Info');
+  $req = $connect->query('SELECT * FROM infos');
   return $req;
 }
 
+function difficulte($connect){
+  $req = $connect->query('SELECT * FROM difficultes');
+  return $req;
+}
 
-function formulaire($connect, $id_Info, $auteur, $fichetechnique, $codecapacite, $etape, $secteur, $codenaf, $titreExo, $id_difficulte, $enonce, $fichier){
+function formulaire($connect, $auteur, $fichetechnique, $codecapacite, $etape, $secteur, $codenaf, $titre, $enonce, $id_Info, $id_difficulte){
     try{
-        $req = "INSERT INTO Info (id, auteur, fichetechnique, codecapacite, etape, secteur, codenaf)
-        VALUES ('id, auteur, fichetechnique, codecapacite, etape, secteur, codenaf')";
+        $req = $connect->prepare("INSERT INTO infos (auteur, fichetechnique, codecapacite, etape, secteur, codenaf)
+                                  VALUES(:auteur, :fichetechnique, :codecapacite, :etape, :secteur, :codenaf)");
+        $req->execute(array(
+        'auteur' => $auteur,
+        'fichetechnique' => $fichetechnique,
+        'codecapacite' => $codecapacite,
+        'etape' => $etape,
+        'secteur' => $secteur,
+        'codenaf' => $codenaf
+        ));
         // use exec() because no results are returned
-        $connect->exec($req);
-        echo "Nouvel exo enregistré";
+        echo "Nouvel info enregistré";
 
-        $req = "INSERT INTO Exo (id, titre, enonce, $id_Info, id_difficulte)
-            VALUES ('id, titre, enonce, id_Info, id_difficulte')";
+        $req = $connect->prepare("INSERT INTO exos (titre, enonce, id_Info, id_difficulte)
+                                  VALUES(:titre, :enonce, :id_Info, :id_difficulte)");
+            $req->execute(array(
+              'titre' => $titre,
+              'enonce' => $enonce,
+              'id_Info' => $id_Info,
+              'id_difficulte' => $id_difficulte
+            ));
             // use exec() because no results are returned
-        $connect->query($req);
-        echo "Nouvel Info enregistré";
+        echo "Nouvel exo enregistré";
     }
     catch(PDOException $e){
         echo "Request failed : " . $e->getMessage();

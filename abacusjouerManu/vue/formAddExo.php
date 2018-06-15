@@ -2,34 +2,6 @@
 include '../modele/ConnectBDD.php';
 include '../modele/functionAddExo.php';
 
-//Partie nomenclature :
-// if (isset($_GET['auteur'])) {
-//   $auteur = $_GET['auteur'];
-// } else $auteur = "";
-// if (isset($_GET['fichetechnique'])) {
-//   $fichetechnique = $_GET['fichetechnique'];
-// } else $fichetechnique = "";
-// if (isset($_GET['codecapacite'])) {
-//   $codecapacite = $_GET['codecapacite'];
-// } else $codecapacite = "";
-// if (isset($_GET['etape'])) {
-//   $titre = $_GET['etape'];
-// } else $etape = "";
-// if (isset($_GET['secteur'])) {
-//   $secteur = $_GET['secteur'];
-// } else $secteur = "";
-// if (isset($_GET['codenaf'])) {
-//   $codenaf = $_GET['codenaf'];
-// } else $codenaf = "";
-//
-// //Partie énoncé :
-// if (isset($_GET['titreExo'])) {
-//   $titreExo = $_GET['titreExo'];
-// } else $titreExo = "";
-// if (isset($_GET['enonce'])) {
-//   $enonce = $_GET['enonce'];
-// } else $enonce = "";
-
 ?>
 
 <html>
@@ -51,7 +23,7 @@ include '../modele/functionAddExo.php';
                     <div class="modal-body">
                         <h5 class="modal-body">Partie nomenclature</h5>
                             <div class="form-group">
-                                <form class="container formulaire" action="traitformAddExo.php" enctype="multipart/form-data" method="post">
+                                <form class="container formulaire" action="../controleur/traitformAddExo.php" enctype="multipart/form-data" method="post">
                                     <div class="form-group form-title">
                                         <label for="selectCategorie form-title">Selectioner le nom de l'auteur</label>
                                         <select class="form-control form-field" id="selectidInfo" name="id_Info">
@@ -64,23 +36,19 @@ include '../modele/functionAddExo.php';
                                     </div>
                                     <div class="form-group form-title">
                                         <label for="exampleFormControlInput1 form-title">Auteur</label>
-                                        <input name="auteur" type="text" class="form-control form-field" placeholder="Auteur" value="<?//php print $auteur; ?>">
+                                        <input name="auteur" type="text" class="form-control form-field" placeholder="Auteur" value="">
                                         <label for="exampleFormControlInput1 form-title">Fiche Technique</label>
-                                        <input name="fichetechnique" type="text" class="form-control form-field" placeholder="Fiche Technique" value="<?php //print $fichetechnique; ?>">
+                                        <input name="fichetechnique" type="text" class="form-control form-field" placeholder="Fiche Technique" value="">
                                         <label for="exampleFormControlInput1 form-title">Code Capacité</label>
-                                        <input name="codecapacite" type="text" class="form-control form-field" placeholder="Code Capacité" value="<?php// print $codecapacite; ?>">
+                                        <input name="codecapacite" type="text" class="form-control form-field" placeholder="Code Capacité" value="">
                                         <label for="exampleFormControlInput1 form-title">Étapes</label>
-                                        <input name="etape" type="text" class="form-control form-field" placeholder="Étapes" value="<?php //print $etape; ?>">
+                                        <input name="etape" type="text" class="form-control form-field" placeholder="Étapes" value="">
                                         <label for="exampleFormControlInput1 form-title">Secteur</label>
-                                        <input name="secteur" type="text" class="form-control form-field" placeholder="secteur" value="<?php //print $secteur; ?>">
+                                        <input name="secteur" type="text" class="form-control form-field" placeholder="secteur" value="">
                                         <label for="exampleFormControlInput1 form-title">Code N.A.F</label>
-                                        <input name="codenaf" type="text" class="form-control form-field" placeholder="Code NAF" value="<?php //print $codenaf; ?>">
+                                        <input name="codenaf" type="text" class="form-control form-field" placeholder="Code NAF" value="">
                                     </div>
                                     <h5 class="modal-body">Partie énoncé</h5>
-                                    <div class="title form-title">
-                                        <label for="exampleFormControlInput1 form-title">Titre</label>
-                                        <input name="titreExo" type="text" class="form-control form-field" placeholder="Indiquer votre titre ici" value="<?php //print $titreExo; ?>">
-                                    </div>
                                     <div class="form-group form-title">
                                         <label for="selectCategorie form-title">Selectioner la difficulté</label>
                                           <select class="form-control form-field" id="selectDiff"  name="id_difficulte" >
@@ -91,9 +59,14 @@ include '../modele/functionAddExo.php';
                                             <?php } ?>
                                           </select>
                                     </div>
+                                    <div class="title form-title">
+                                        <label for="exampleFormControlInput1 form-title">Titre</label>
+                                        <input name="titre" type="text" class="form-control form-field" placeholder="Indiquer votre titre ici" value="">
+                                    </div>
+
                                     <div class="form-group form-title">
                                         <label for="exampleFormControlTextarea1 form-title">Écrire l'énoncé</label>
-                                        <textarea name="enonce" class="form-control form-field" id="exampleFormControlTextarea1" rows="5" value="<?php// print $enonce; ?>"></textarea>
+                                        <textarea name="enonce" class="form-control form-field" id="exampleFormControlTextarea1" rows="5" value=""></textarea>
                                     </div>
                                     <div class="custom-file form-title">
                                         <input  value="Upload Image"  name="fichier" type="file" class="custom-file-input form-title" id="customFile">
