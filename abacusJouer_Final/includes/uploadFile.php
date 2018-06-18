@@ -19,7 +19,7 @@
                 echo "Le fichier n'a pas était chargé! Merci de réessayer";
             }
 
-            header("Location: ../vue/formAddExo.php");
+            header("Location: formAddExo.php");
         }
         catch(Exception $e){
                 echo "Request failed : " . $e->getMessage();
