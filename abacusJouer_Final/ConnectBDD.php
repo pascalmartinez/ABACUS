@@ -1,20 +1,16 @@
 <?php
+include('login.php');
 
     function connectDB(){
 
         $servername = "localhost";
 
-        $username = "root";
-
-        $password = "admin";
-
         $dbname = "calculBddMichel3";
-
-
+        
 
         try {
 
-            $connect = new PDO("mysql:host=$servername;dbname=$dbname; charset=utf8", $username, $password);
+            $connect = new PDO("mysql:host=$servername;dbname=$dbname; charset=utf8", getUser(), getMdp());
 
             // set the PDO error mode to exception
 

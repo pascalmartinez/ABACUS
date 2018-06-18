@@ -6,7 +6,7 @@
 
         $username = "root";
 
-        $password = "admin";
+        $password = "Alchimie12";
 
         $dbname = "calculBddMichel3";
 
