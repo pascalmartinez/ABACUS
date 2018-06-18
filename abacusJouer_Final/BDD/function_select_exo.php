@@ -7,7 +7,7 @@
       try{
         $stmt = $connect->prepare("SELECT id, niveau
         FROM difficultes
-
+        WHERE niveau
         ");
         $stmt->execute();
         return $stmt;
@@ -17,31 +17,6 @@
       }
     }
 
-// function ExoList($connect, $offset){
-//     try{
-//         $limit = 10;
-//
-//         $stmt = $connect->prepare("SELECT exos.id, exos.titre, exos.enonce, exos.url_img, exos.id_Info, exos.id_difficulte, infos.auteur
-//         FROM exos
-//         INNER JOIN users ON users.classe=exos.id_difficulte
-//         INNER JOIN difficultes ON difficultes.id=exos.id_difficultes
-//         INNER JOIN infos ON exos.id_Info=infos.id
-//         LIMIT
-//             :limit
-//         OFFSET
-//             :offset");
-//
-//         $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
-//         $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
-//
-//         $stmt->execute();
-//
-//         return $stmt;
-//     }
-//     catch(PDOExeption $e){
-//         echo "Request failed : " . $e->getMessage();
-//     }
-// }
 
 
 //Permet d'afficher l'exercice en fonction du niveau

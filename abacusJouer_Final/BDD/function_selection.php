@@ -20,7 +20,7 @@ function selectNiveau($connect){
 
 function SelectAuteur($connect){
     try{
-      $stmt = $connect->prepare("SELECT id, auteur
+      $stmt = $connect->prepare("SELECT DISTINCT auteur
       FROM infos
 
       ");

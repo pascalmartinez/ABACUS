@@ -32,7 +32,8 @@
         echo 'Cette variable existe, donc je peux l\'enregister.';
     }
 
-    formulaire($connect, $auteur, $fichetechnique, $codecapacite, $etape, $secteur, $codenaf, $id_difficulte, $id_info, $titreExo, $enonce, $fichier);
+    formulaireAuteur($connect, $auteur, $fichetechnique, $codecapacite, $etape, $secteur, $codenaf);
+    formulaireExo($connect, $id_difficulte, $id_info, $titreExo, $enonce, $fichier);
     fichier();
 
 ?>

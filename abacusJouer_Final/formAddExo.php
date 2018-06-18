@@ -7,7 +7,7 @@
         include 'BDD/functionAddExo.php';
         include 'BDD/function_selection.php';
         include 'includes/function_affichage.php';
-        // include '../controleur/traitformAddExo.php';
+        // include 'BDD/traitformAddExo.php';
     ?>
   </head>
 
@@ -64,16 +64,15 @@
                             </div>
                             <div class="formulaire-Contain">
                                 <label for="Textarea">Écrire l'énoncé</label>
-                                <textarea name="enonce" class="form-field" id="Textarea1" rows="auto" value="<?php// print $enonce; ?>"></textarea>
+                                <textarea name="enonce" class="form-field" id="Textarea1" rows="auto" value=""></textarea>
                             </div>
                             <div class="custom-file ">
                                 <label class="custom-file-label form-field" for="customFile">Charger une image</label>
                                 <input  value="Upload Image"  name="fichier" type="file" class="custom-file-input" id="customFile">
 
                             </div>
-                            <div class="submit-container modal-footer">
-                                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-                                <input class="submit-button" type="submit" value="Submit" action="post" />
+                            <div class="submit-container">
+                                <input class="submit-button" type="submit" value="Enregistrer nouvel exercice" action="post" />
                             </div>
                         </form>
                     </div>
