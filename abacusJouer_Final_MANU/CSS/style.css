@@ -1,0 +1,23 @@
+body
+{
+    background-image: url(../sources/images/board.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color : white;
+}
+
+h5
+{
+    font-style: italic;
+}
+
+.auteur
+{
+    font-style: italic;
+
+}
+
+#reponseUsers
+{
+    color : white;
+}

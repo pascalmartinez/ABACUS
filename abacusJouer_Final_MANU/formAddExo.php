@@ -7,7 +7,7 @@
         include 'BDD/functionAddExo.php';
         include 'BDD/function_selection.php';
         include 'includes/function_affichage.php';
-        // include 'BDD/traitformAddExo.php';
+        // include '../controleur/traitformAddExo.php';
     ?>
   </head>
 
@@ -73,10 +73,11 @@
                             <h5 class="formulaire-title">Partie réponse</h5>
                             <div class="formulaire-Contain">
                                 <label for="Textarea">Écrire la/les réponse(s)</label>
-                                <textarea name="reponse" class="form-field" id="Textarea2"" rows="auto"></textarea>
+                                <textarea name="reponse" class="form-field" id="Textarea2" rows="auto"></textarea>
                             </div>
-                            <div class="submit-container">
-                                <input class="submit-button" type="submit" value="Enregistrer nouvel exercice" action="post" />
+                            <div class="submit-container modal-footer">
+                                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                                <input class="submit-button" type="submit" value="Submit" action="post" />
                             </div>
                         </form>
                     </div>

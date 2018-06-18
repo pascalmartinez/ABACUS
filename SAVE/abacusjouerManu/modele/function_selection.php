@@ -20,7 +20,7 @@ function selectNiveau($connect){
 
 function SelectAuteur($connect){
     try{
-      $stmt = $connect->prepare("SELECT DISTINCT id, auteur
+      $stmt = $connect->prepare("SELECT id, auteur
       FROM infos
 
       ");
@@ -31,14 +31,6 @@ function SelectAuteur($connect){
         echo "Requete Giveexos fausse : " . $e->getMessage();
     }
   }
-
-  // function selectReponse($connect){
-  //   try{
-  //     $stmt = $connect->prepare("SELECT id,reponse
-  //     FROM exos
-  //     ");
-  //   }
-  // }
 
 
  ?>
