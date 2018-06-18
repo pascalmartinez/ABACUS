@@ -32,5 +32,13 @@ function SelectAuteur($connect){
     }
   }
 
+  // function selectReponse($connect){
+  //   try{
+  //     $stmt = $connect->prepare("SELECT id,reponse
+  //     FROM exos
+  //     ");
+  //   }
+  // }
+
 
  ?>

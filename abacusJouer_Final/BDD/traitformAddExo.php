@@ -3,11 +3,12 @@
     include 'functionAddExo.php';
     include '../includes/uploadFile.php';
 
-    //récupération des valeurs des champs:
-    //Partie nomenclature :
+
 
     $connect=connectDB();
 
+    //récupération des valeurs des champs:
+    //Partie nomenclature :
     $id_info = $_POST["id_info"];
     $auteur = $_POST["auteur"];
     $fichetechnique = $_POST["fichetechnique"];
@@ -21,6 +22,9 @@
     $id_difficulte = $_POST["id_difficulte"];
     $enonce = $_POST["enonce"];
 
+    //Partie réponse :
+    $reponse = $_POST['reponse'];
+
     if(isset($_FILES['fichier']['name'])){
         $fichier = $_FILES['fichier']['name'];
     }
@@ -33,7 +37,7 @@
     }
 
     formulaireAuteur($connect, $auteur, $fichetechnique, $codecapacite, $etape, $secteur, $codenaf);
-    formulaireExo($connect, $id_difficulte, $id_info, $titreExo, $enonce, $fichier);
+    formulaireExo($connect, $id_difficulte, $id_info, $titreExo, $enonce, $fichier, $reponse);
     fichier();
 
 ?>

@@ -10,9 +10,7 @@
     <title>Page À toi de jouer du site Calcul mental</title>
 
     <!-- Ajout de cdn qui seront spécifiques à notre thème -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
+    
     <!-- Ajout d'une nouvelle feuille de style qui sera spécifique à notre thème -->
     <link rel="stylesheet" href="../css/style.css">
     <!-- <link href="<?php //bloginfo('template_directory');?>/blog.css" rel="stylesheet">

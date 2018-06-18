@@ -13,11 +13,11 @@ function formulaireAuteur($connect, $auteur, $fichetechnique, $codecapacite, $et
     }
 }
 
-function formulaireExo($connect, $id_difficulte, $id_info, $titreExo, $enonce, $fichier){
+function formulaireExo($connect, $id_difficulte, $id_info, $titreExo, $enonce, $fichier, $reponse){
     try{
 
-        $req = "INSERT INTO exos (id_difficulte, id_info, titre, enonce , url_img)
-            VALUES ('$id_difficulte','$id_info', '$titreExo', '$enonce', '$fichier')";
+        $req = "INSERT INTO exos (id_difficulte, id_info, titre, enonce, reponse, url_img, reponse)
+            VALUES ('$id_difficulte','$id_info', '$titreExo', '$enonce', $reponse, '$fichier', '$reponse')";
 
 
         $connect->query($req);

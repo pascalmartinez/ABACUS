@@ -44,7 +44,7 @@
                                 <label for="Input form-title">Étapes</label>
                                 <input name="etape" type="text" class="-field" placeholder="Étapes" >
                                 <label for="Input form-title">Secteur</label>
-                                <input name="secteur" type="text" class="form-field" placeholder="secteur" >
+                                <input name="secteur" type="text" class="form-field" placeholder="Secteur" >
                                 <label for="Input form-title">Code N.A.F</label>
                                 <input name="codenaf" type="text" class="form-field" placeholder="Code NAF" >
                             </div>
@@ -64,12 +64,16 @@
                             </div>
                             <div class="formulaire-Contain">
                                 <label for="Textarea">Écrire l'énoncé</label>
-                                <textarea name="enonce" class="form-field" id="Textarea1" rows="auto" value=""></textarea>
+                                <textarea name="enonce" class="form-field" id="Textarea1" rows="auto"></textarea>
                             </div>
                             <div class="custom-file ">
                                 <label class="custom-file-label form-field" for="customFile">Charger une image</label>
                                 <input  value="Upload Image"  name="fichier" type="file" class="custom-file-input" id="customFile">
-
+                            </div>
+                            <h5 class="formulaire-title">Partie réponse</h5>
+                            <div class="formulaire-Contain">
+                                <label for="Textarea">Écrire la/les réponse(s)</label>
+                                <textarea name="reponse" class="form-field" id="Textarea2" rows="auto"></textarea>
                             </div>
                             <div class="submit-container">
                                 <input class="submit-button" type="submit" value="Enregistrer nouvel exercice" action="post" />
