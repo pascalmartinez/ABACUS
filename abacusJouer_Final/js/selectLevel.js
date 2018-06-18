@@ -1,8 +1,7 @@
 $(document).ready(function(){
-	$("#test").change(function(){
-		var id = $("#test option:selected").val();
+	$("#level").change(function(){
+		var id = $("#level option:selected").val();
 
-
-    $("#main").load("php/action.php", "id="+id);
+    $("#val").load("php/action.php", "id="+id);
 	});
 });

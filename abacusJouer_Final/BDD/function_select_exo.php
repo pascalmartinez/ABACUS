@@ -56,7 +56,9 @@ function selectExo($connect, $classe=null){
                 FROM exos
                 INNER JOIN infos ON exos.id_info=infos.id
                 INNER JOIN difficultes ON exos.id_difficulte=difficultes.niveau
-                WHERE difficultes.niveau=$classe");
+                WHERE difficultes.niveau=$classe
+                ORDER BY RAND()
+                LIMIT 1 ");
 
             $stmt->execute();
             return $stmt;
@@ -64,12 +66,16 @@ function selectExo($connect, $classe=null){
         catch(PDOExeption $e){
             echo "Request failed : " . $e->getMessage();
         }
-    }else{
+    }
+    else{
         //si pas set, celle sans where, sans niveau
-        try{
+        try
+        {
             $stmt = $connect->prepare("SELECT exos.id, exos.titre, exos.enonce, exos.url_img, infos.auteur
                 FROM exos INNER JOIN infos ON exos.id_info=infos.id
-                INNER JOIN difficultes ON exos.id_difficulte=difficultes.niveau");
+                INNER JOIN difficultes ON exos.id_difficulte=difficultes.niveau
+                ORDER BY RAND()
+                LIMIT 1 ");
             $stmt->execute();
             return $stmt;
         }
@@ -79,6 +85,7 @@ function selectExo($connect, $classe=null){
     }
 
 }
+
 
 
 

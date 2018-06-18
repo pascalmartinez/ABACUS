@@ -26,7 +26,7 @@
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputNiveau">Niveau</label>
                         </div>
-                        <select id ="test" class="custom-select col-6 col-md-4">
+                        <select id ="level" class="custom-select col-6 col-md-4">
 
                            <?php
                             $stmt = selectNiveau($connect);
@@ -41,22 +41,25 @@
         </div>
         <div class="container section" >
             <div class="row">
-                <div class="col-6" id="main">
+                <div class="col-6" id="val">
 
                         <?php
                         $stmt = selectExo($connect);
                         $stmt = afficherExo($stmt, $connect);
-                        // $stmt = afficherExo($stmt, $connect);
+
                         // echo "balance ton exo!!!";
                         ?>
 
+
                 </div>
             </div>
+            <button type="button"  id="buttonNext" onclick= "exo()">Exercice suivant</button>
+
         </div>
         <script  src="includes/jquery-3.3.1.min.js"></script>
-
+        <script type="text/javascript" src="js/jqueryExo.js"></script>
         <script type="text/javascript" src="js/selectLevel.js"></script>
-        <!-- <script type="text/javascript" src="js/jqueryExo.js"></script> -->
+
 
 
     </body>
