@@ -39,5 +39,6 @@
     formulaireAuteur($connect, $auteur, $fichetechnique, $codecapacite, $etape, $secteur, $codenaf);
     formulaireExo($connect, $id_difficulte, $id_info, $titreExo, $enonce, $fichier, $reponse);
     fichier();
+    // header("Location: ../formAddExo.php");
 
 ?>

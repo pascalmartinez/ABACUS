@@ -73,7 +73,7 @@
                             <h5 class="formulaire-title">Partie réponse</h5>
                             <div class="formulaire-Contain">
                                 <label for="Textarea">Écrire la/les réponse(s)</label>
-                                <textarea name="reponse" class="form-field" id="Textarea2"" rows="auto"></textarea>
+                                <textarea name="reponse" class="form-field" id="Textarea2" rows="auto"></textarea>
                             </div>
                             <div class="submit-container">
                                 <input class="submit-button" type="submit" value="Enregistrer nouvel exercice" action="post" />

@@ -49,22 +49,29 @@
 
                         // echo "balance ton exo!!!";
                         ?>
-
-
                 </div>
             </div>
-            <button type="button"  id="buttonNext" onclick= "exo()">Exercice suivant</button>
+
+            <div class="container section" >
+                <div class="row">
+                    <div class="col-6">
+                        <form class="reponse" id="reponse_user" action="php/reponse.php" method="post">
+                            <h3 >Ta réponse</h3>
+                            <input type="text" name="reponse_user" value="">
+                            <div class="submit-container">
+                                <input class="submit-button" type="submit" value="Passer à l'exercice suivant" action="post" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- <button type="button"  id="buttonNext" onclick= "exo()">Exercice suivant</button> -->
 
         </div>
       </div>
-      <div class="container section" >
-          <div class="row">
-              <div class="col-6" id="main">
 
-        
-              </div>
-          </div>
-      </div>
         <script  src="includes/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="js/jqueryExo.js"></script>
         <script type="text/javascript" src="js/selectLevel.js"></script>
