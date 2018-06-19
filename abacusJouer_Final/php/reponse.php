@@ -1,21 +1,34 @@
 <?php
-// include '../BDD/ConnectBDD.php';
-include '../exo.php';
+include '../BDD/ConnectBDD.php';
+// include '../exo.php';
 // include '../BDD/traitformAddExo.php';
 
 
-$reponse_user = $_GET['reponse_user'];
-$reponse = $_GET['reponse'];
-$score=0;
+    $connect=connectDB();
 
-if ($reponse_user == $reponse ) {
-    echo "Bonne réponse";
-    $score = +1;
-}else {
-    echo "Mauvaise réponse";
-    $score = +0;
+
+function compareReponse($connect){
+
+    $reponse_user = $_POST['reponse_user'];
+    $reqReponse =$connect->query("SELECT id,reponse FROM exos");
+    $data=$reqReponse->fetch();
+    $reponse = $data['reponse'];
+    $score = 0;
+
+    if ($reponse_user == $reponse ) {
+        echo "Bonne réponse";
+        $score = +1;
+    }else {
+        echo "Mauvaise réponse";
+        $score = +0;
+    }
+        // return $score;
 }
-    return $score;
+
+
+compareReponse($connect);
+
+
 
 
  ?>

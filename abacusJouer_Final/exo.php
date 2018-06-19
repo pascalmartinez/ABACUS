@@ -55,9 +55,9 @@
             <div class="container section" >
                 <div class="row">
                     <div class="col-6">
-                        <form class="reponse" id="reponse_user" action="php/reponse.php" method="post">
+                        <form class="reponse" action="php/reponse.php" method="post">
                             <h3 >Ta réponse</h3>
-                            <input type="text" name="reponse_user" value="">
+                            <input type="text" name="reponse_user" >
                             <div class="submit-container">
                                 <input class="submit-button" type="submit" value="Passer à l'exercice suivant" action="post" />
                             </div>
