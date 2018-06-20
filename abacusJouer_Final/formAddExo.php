@@ -2,6 +2,8 @@
 <html>
   <head>
     <?php
+        session_start();
+
         include 'includes/header.php';
         include 'BDD/ConnectBDD.php';
         include 'BDD/functionAddExo.php';
@@ -31,12 +33,13 @@
                                     <?php
                                         $stmt = SelectAuteur($connect);
                                         $stmt = afficherSelectAuteur($stmt,$connect);
+                                        // $stmt =  listauteurs($connect);
                                     ?>
                                 </select>
                             </div>
                             <div class="formulaire-Contain">
-                                <label for="Input form-title">Auteur</label>
-                                <input name="auteur" type="text" class="form-field" placeholder="Auteur" >
+                               <label for="Input form-title">Auteur</label>
+                                <input name="auteur" type="text" class="form-field" placeholder="Auteur" value="">
                                 <label for="Input form-title">Fiche Technique</label>
                                 <input name="fichetechnique" type="text" class="form-field" placeholder="Fiche Technique" >
                                 <label for="Input form-title">Code Capacité</label>
