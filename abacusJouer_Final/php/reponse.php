@@ -10,9 +10,11 @@ include '../BDD/ConnectBDD.php';
 function compareReponse($connect){
 
     $reponse_user = $_POST['reponse_user'];
-    $reqReponse =$connect->query("SELECT id,reponse FROM exos");
+    $reqReponse =$connect->query("SELECT id, reponse FROM exos ");
+
     $data=$reqReponse->fetch();
     $reponse = $data['reponse'];
+    var_dump($data);
     $score = 0;
 
     if ($reponse_user == $reponse ) {
