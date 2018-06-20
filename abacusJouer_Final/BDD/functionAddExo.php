@@ -14,30 +14,42 @@ function formulaireAuteur($connect, $auteur, $fichetechnique, $codecapacite, $et
   //     }
   // } else {
     try{
-        $req = "INSERT INTO infos (auteur, fichetechnique, codecapacite, etape, secteur, codenaf)
+        $reqAuteur = "INSERT INTO infos (auteur, fichetechnique, codecapacite, etape, secteur, codenaf)
         VALUES ('$auteur', '$fichetechnique', '$codecapacite', '$etape', '$secteur', '$codenaf')";
 
-        $connect->query($req);
+        $connect->query($reqAuteur);
         echo "Nouvel auteur enregistré";
     }
     catch(PDOException $e){
-        echo "Request failed : " . $e->getMessage();
+        echo "Request formulaireAuteur failed : " . $e->getMessage();
     }
   // }
 }
 
-function formulaireExo($connect, $id_difficulte, $id_info, $titreExo, $enonce, $fichier, $reponse){
+// function formulaireAuteur($connect, $auteur, $fichetechnique, $codecapacite, $etape, $secteur, $codenaf){
+//     try{
+//         $req = "INSERT INTO infos (auteur, fichetechnique, codecapacite, etape, secteur, codenaf)
+//         VALUES ('$auteur', '$fichetechnique', '$codecapacite', '$etape', '$secteur', '$codenaf')";
+//
+//         $connect->query($req);
+//         echo "Nouvel auteur enregistré";
+//     }
+//     catch(PDOException $e){
+//         echo "Request failed : " . $e->getMessage();
+//     }
+// }
+
+function formulaireExo($connect, $titreExo, $enonce, $reponse, $fichier, $id_info, $id_difficulte){
     try{
 
-        $req = "INSERT INTO exos (id_difficulte, id_info, titre, enonce, url_img, reponse )
+        $reqExo = "INSERT INTO exos (id_difficulte, id_info, titre, enonce, url_img, reponse )
             VALUES ('$id_difficulte','$id_info', '$titreExo', '$enonce', '$fichier', '$reponse')";
 
-
-        $connect->query($req);
+        $connect->query($reqExo);
         echo "Nouvel exercice enregistré";
     }
     catch(PDOException $e){
-        echo "Request failed : " . $e->getMessage();
+        echo "Request formulaireExo failed : " . $e->getMessage();
     }
 }
 

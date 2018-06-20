@@ -25,6 +25,7 @@
     //Partie réponse :
     $reponse = $_POST['reponse'];
 
+    //Vérifie si il y a un fichier dans le browser et envoi son chemin à la BDD
     if(isset($_FILES['fichier']['name'])){
         $fichier = $_FILES['fichier']['name'];
     }
@@ -37,7 +38,7 @@
     }
 
     formulaireAuteur($connect, $auteur, $fichetechnique, $codecapacite, $etape, $secteur, $codenaf);
-    formulaireExo($connect, $id_difficulte, $id_info, $titreExo, $enonce, $fichier, $reponse);
+    formulaireExo($connect, $titreExo, $enonce, $reponse, $fichier, $id_info, $id_difficulte);
     fichier();
     // header("Location: ../formAddExo.php");
 
