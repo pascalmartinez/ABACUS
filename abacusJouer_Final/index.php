@@ -8,9 +8,22 @@ if (isset($_POST) && !empty($_POST['pseudo']) && !empty($_POST['nom']) && !empty
   extract($_POST);
   $password = sha1($password);
   connectDB('calculBddMichel3');
-  $sql = "SELECT id FROM users WHERE pseudo='$pseudo', nom='$nom', prenom='$prenom', classe='$classe', mail='$mail' AND password='$password'";
-  $connect->query($sql) or die('Erreur : '.$e->getMessage());
-  // echo mysql_num_rows($connect);
+  $sql = $dbh->prepare("SELECT id FROM users WHERE pseudo='$pseudo', nom='$nom', prenom='$prenom', classe='$classe', mail='$mail' AND password='$password'");
+  $count = $sql->rowCount();
+  print($count);
+
+
+
+  // $row_cnt = $result->num_rows;
+  // echo ($row_cnt);
+  /* close result set */
+  // $result->close();
+
+
+
+
+  // $req = mysqli_query ($sql) or die(mysqli_error());
+  //  echo mysqli_num_rows($req);
   // $sql->rowCount();
 }
 

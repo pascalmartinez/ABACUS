@@ -31,6 +31,4 @@ function compareReponse($connect){
 compareReponse($connect);
 
 
-
-
  ?>
