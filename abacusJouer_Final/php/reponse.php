@@ -4,18 +4,20 @@ include '../BDD/ConnectBDD.php';
 // include '../BDD/traitformAddExo.php';
 
 
-    $connect=connectDB();
-
+$connect=connectDB();
+$score = 0;
 
 function compareReponse($connect){
 
+
     $reponse_user = $_POST['reponse_user'];
+
     $reqReponse =$connect->query("SELECT id, reponse FROM exos ");
 
     $data=$reqReponse->fetch();
     $reponse = $data['reponse'];
     var_dump($data);
-    $score = 0;
+
 
     if ($reponse_user == $reponse ) {
         echo "Bonne réponse";
@@ -24,11 +26,20 @@ function compareReponse($connect){
         echo "Mauvaise réponse";
         $score = +0;
     }
+
+
+
         // return $score;
 }
 
 
-compareReponse($connect);
+    compareReponse($connect);
 
+function UpScore ($connect){
+
+
+    $upScore=$connect->query("INSERT INTO score FROM users");
+
+}
 
  ?>

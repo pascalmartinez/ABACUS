@@ -2,18 +2,15 @@
  * UserRegistration Admin JS
  * global i18n_admin
  */
-
 jQuery(function () {
 
 	var mySelect = jQuery('#user_registration_general_setting_login_options option:selected').val();
-	
 	if ( mySelect == 'email_confirmation' ) {
 		jQuery('#user_registration_general_setting_disable_email').attr('checked', false);
 		jQuery("#user_registration_general_setting_disable_email").attr("disabled", true);
 	}
 
 	jQuery("body").on('select2:select', "#user_registration_general_setting_login_options", function () {
-
 		if ( jQuery(this).find('option:selected').val() == "email_confirmation" ) {
 			jQuery('#user_registration_general_setting_disable_email').attr('checked', false);
 			jQuery("#user_registration_general_setting_disable_email").attr("disabled", true);
@@ -23,7 +20,6 @@ jQuery(function () {
 		}
 	});
 });
-
 
 jQuery(function ( $ ) {
 	// Tooltips
@@ -636,7 +632,11 @@ jQuery(function ( $ ) {
 					});
 					break;
 				case 'description':
-					$this_obj.on('change', function () {
+					$this_obj.on('keyup', function () {
+						trigger_general_setting_description($(this));
+					});
+				case 'html':
+					$this_obj.on('keyup', function () {
 						trigger_general_setting_description($(this));
 					});
 					break;
@@ -725,7 +725,7 @@ jQuery(function ( $ ) {
 				radio.append('<label><input value="' + array_value[ i ].trim() + '" type="radio">' + array_value[ i ].trim() +'</label>' );
 			}
 		}
-	}	
+	}
 	function render_select_box ( value ) {
 		value = $.trim(value);
 		var wrapper = $('.ur-selected-item.ur-item-active');
@@ -747,10 +747,10 @@ jQuery(function ( $ ) {
 	function trigger_general_setting_label ( $label ) {
 		var wrapper = $('.ur-selected-item.ur-item-active');
 		wrapper.find('.ur-label').find('label').text($label.val());
-		
+
 		var wrapper = $('.ur-selected-item.ur-item-active');
 		wrapper.find('.ur-general-setting-block').find('input[data-field="' + $label.attr('data-field') + '"]').attr('value', $label.val());
-	
+
 	}
 
 	function trigger_general_setting_description ( $label ) {
@@ -833,21 +833,14 @@ jQuery(function ( $ ) {
 
 			}
 		});
-
-
 	}
 
 	function ur_math_ceil ( value ) {
-
 		return Math.ceil(value, 0);
-
 	}
 
 	function ur_parse_int ( value ) {
-
 		return parseInt(value, 0);
 	}
 
-
 }(jQuery, window.user_registration_admin_data));
-

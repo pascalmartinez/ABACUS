@@ -3,7 +3,7 @@
  * Plugin Name: User Registration
  * Plugin URI: https://wpeverest.com/plugins/user-registration
  * Description: Drag and Drop user registration and login form builder.
- * Version: 1.3.1
+ * Version: 1.4.1
  * Author: WPEverest
  * Author URI: https://wpeverest.com
  * Text Domain: user-registration
@@ -30,7 +30,7 @@ final class UserRegistration {
 	 * Plugin version.
 	 * @var string
 	 */
-	public $version = '1.3.1';
+	public $version = '1.4.1';
 
 	/**
 	 * Session instance.
@@ -160,13 +160,11 @@ final class UserRegistration {
 		/**
 		 * Class autoloader.
 		 */
-
 		include_once( UR_ABSPATH . 'includes/class-ur-autoloader.php' );
 
 		/**
 		 * Interfaces.
 		 */
-
 		include_once( UR_ABSPATH . 'includes/interfaces/class-ur-logger-interface.php' );
 		include_once( UR_ABSPATH . 'includes/interfaces/class-ur-log-handler-interface.php' );
 

@@ -62,8 +62,7 @@ if ( ! class_exists( 'UR_Settings_General' ) ) :
 
 			unset($all_roles_except_admin['administrator']);
 
-
-		$settings = apply_filters(
+			$settings = apply_filters(
 				'user_registration_general_settings', array(
 
 					array(
@@ -72,19 +71,7 @@ if ( ! class_exists( 'UR_Settings_General' ) ) :
 						'desc'  => '',
 						'id'    => 'general_options',
 					),
-
-					array(
-						'title'    => __( 'Default user role', 'user-registration' ),
-						'desc'     => __( 'This option lets you choose user role for frontend registration.', 'user-registration' ),
-						'id'       => 'user_registration_general_setting_default_user_role',
-						'default'  => 'subscriber',
-						'type'     => 'select',
-						'class'    => 'ur-enhanced-select',
-						'css'      => 'min-width: 350px;',
-						'desc_tip' => true,
-						'options'  => $all_roles,
-					),
-					array(
+          			array(
 						'title'    => __( 'User login option', 'user-registration' ),
 						'desc'     => __( 'This option lets you choose login option after user registration.', 'user-registration' ),
 						'id'       => 'user_registration_general_setting_login_options',
@@ -95,7 +82,6 @@ if ( ! class_exists( 'UR_Settings_General' ) ) :
 						'desc_tip' => true,
 						'options'  => ur_login_option(),
 					),
-
 					array(
 						'title'    => __( 'Redirect URL', 'user-registration' ),
 						'desc'     => __( 'This option lets you enter redirect path after successful user registration.', 'user-registration' ),
@@ -103,9 +89,7 @@ if ( ! class_exists( 'UR_Settings_General' ) ) :
 						'type'     => 'text',
 						'desc_tip' => true,
 						'css'      => 'min-width: 350px;',
-
 					),
-
 					array(
 						'title'    => __( 'Registration URL', 'user-registration' ),
 						'desc'     => __( 'This option lets you enter the registration page url in login form.', 'user-registration' ),
@@ -114,7 +98,6 @@ if ( ! class_exists( 'UR_Settings_General' ) ) :
 						'desc_tip' => true,
 						'css'      => 'min-width: 350px;',
 					),
-
 					array(
 						'title'    => __( 'Registration URL label', 'user-registration' ),
 						'desc'     => __( 'This option lets you enter the label to registration url in login form.', 'user-registration' ),
@@ -124,8 +107,6 @@ if ( ! class_exists( 'UR_Settings_General' ) ) :
 						'css'      => 'min-width: 350px;',
 						'default'  => __( 'Not a member yet? Register now.','user-registration' )
 					),
-
-
 					array(
 						'title'    => __( 'Prevent dashboard access', 'user-registration' ),
 						'desc'     => __( 'This option lets you limit which roles you are willing to prevent dashboard access.', 'user-registration' ),
@@ -137,7 +118,6 @@ if ( ! class_exists( 'UR_Settings_General' ) ) :
 						'desc_tip' => true,
 						'options'  => $all_roles_except_admin,
 					),
-
 					array(
 						'title'    => __( 'My account page', 'user-registration' ),
 						'desc'     => sprintf( __( 'Page contents: [%s]', 'user-registration' ), apply_filters( 'user_registration_myaccount_shortcode_tag', 'user_registration_my_account' ) ),
@@ -149,29 +129,6 @@ if ( ! class_exists( 'UR_Settings_General' ) ) :
 						'desc_tip' => true,
 						'display'  => 'none'
 					),
-
-					array(
-						'title'    => __( 'Enable strong password', 'user-registration' ),
-						'desc'     => __( 'Check to use strong password on user registration form.', 'user-registration' ),
-						'id'       => 'user_registration_general_setting_enable_strong_password',
-						'default'  => 'yes',
-						'type'     => 'checkbox',
-						'autoload' => false,
-					),
-
-					array(
-						'title'    => __( 'Form submit button label', 'user-registration' ),
-						'desc'     => __( 'This option let you change the submit button label.', 'user-registration' ),
-						'id'       => 'user_registration_general_setting_form_submit_label',
-						'default'  => 'Submit',
-						'type'     => 'text',
-						'autoload' => false,
-						'desc_tip' => true,
-						'css'      => 'min-width: 350px;',
-
-
-					),
-
 					array(
 						'type' => 'sectionend',
 						'id'   => 'general_options',
@@ -224,7 +181,6 @@ if ( ! class_exists( 'UR_Settings_General' ) ) :
 						'type' => 'sectionend',
 						'id'   => 'account_endpoint_options',
 					),
-
 				)
 			);
 
@@ -237,10 +193,10 @@ if ( ! class_exists( 'UR_Settings_General' ) ) :
 				'user_registration_frontend_messages_settings', array(
 
 					array(
-						'title' => __( 'Frontend Messages', 'user-registration' ),
+						'title' => __( 'Success Messages', 'user-registration' ),
 						'type'  => 'title',
 						'desc'  => '',
-						'id'    => 'frontend_messages_settings',
+						'id'    => 'frontend_success_messages_settings',
 					),
 
 					array(
@@ -260,7 +216,7 @@ if ( ! class_exists( 'UR_Settings_General' ) ) :
 						'type'     => 'textarea',
 						'desc_tip' => true,
 						'css'      => 'min-width: 350px; min-height: 100px;',
-						'default'  => __('User registered. Verify your email by clicking on the link sent to your email.','user-registration'),
+						'default'  => __( 'User registered. Verify your email by clicking on the link sent to your email.','user-registration' ),
 					),
 
 					array(
@@ -270,14 +226,85 @@ if ( ! class_exists( 'UR_Settings_General' ) ) :
 						'type'     => 'textarea',
 						'desc_tip' => true,
 						'css'      => 'min-width: 350px; min-height: 100px;',
-						'default'  => __('User registered. Wait until admin approves your registration.','user-registration'),
+						'default'  => __( 'User registered. Wait until admin approves your registration.','user-registration' ),
 					),
 
 					array(
 						'type' => 'sectionend',
-						'id'   => 'frontend_messages_settings',
+						'id'   => 'frontend_success_messages_settings',
 					),
 
+					array(
+						'title' => __( 'Error Messages', 'user-registration' ),
+						'type'  => 'title',
+						'desc'  => '',
+						'id'    => 'frontend_error_message_messages_settings',
+					),
+
+					array(
+						'title'    => __( 'Required', 'user-registration' ),
+						'desc'     => __( 'Enter the error message in form submission on required fields.', 'user-registration' ),
+						'id'       => 'user_registration_form_submission_error_message_required_fields',
+						'type'     => 'text',
+						'desc_tip' => true,
+						'css'      => 'min-width: 350px;',
+						'default'  => __( 'This field is required.', 'user-registration' ),
+					),
+
+					array(
+						'title'    => __( 'Email', 'user-registration' ),
+						'desc'     => __( 'Enter the error message in form submission on Email.', 'user-registration' ),
+						'id'       => 'user_registration_form_submission_error_message_email',
+						'type'     => 'text',
+						'desc_tip' => true,
+						'css'      => 'min-width: 350px;',
+						'default'  => __( 'Please enter a valid email address.', 'user-registration' ),
+					),
+
+					array(
+						'title'    => __( 'Website URL', 'user-registration' ),
+						'desc'     => __( 'Enter the error message in form submission on website/URL.', 'user-registration' ),
+						'id'       => 'user_registration_form_submission_error_message_website_URL',
+						'type'     => 'text',
+						'desc_tip' => true,
+						'css'      => 'min-width: 350px;',
+						'default'  => __( 'Please enter a valid URL.', 'user-registration' ),
+					),
+
+					array(
+						'title'    => __( 'Number', 'user-registration' ),
+						'desc'     => __( 'Enter the error message in form submission on Number.', 'user-registration' ),
+						'id'       => 'user_registration_form_submission_error_message_number',
+						'type'     => 'text',
+						'desc_tip' => true,
+						'css'      => 'min-width: 350px;',
+						'default'  => __( 'Please enter a valid number.', 'user-registration' ),
+					),
+
+					array(
+						'title'    => __( 'Confirm Password', 'user-registration' ),
+						'desc'     => __( 'Enter the error message in form submission on Confim Password.', 'user-registration' ),
+						'id'       => 'user_registration_form_submission_error_message_confirm_password',
+						'type'     => 'text',
+						'desc_tip' => true,
+						'css'      => 'min-width: 350px;',
+						'default'  => __( 'Password and confirm password not matched.', 'user-registration' ),
+					),
+
+					array(
+						'title'    => __( 'Google reCaptcha', 'user-registration' ),
+						'desc'     => __( 'Enter the error message in form submission on google recaptcha.', 'user-registration' ),
+						'id'       => 'user_registration_form_submission_error_message_recaptcha',
+						'type'     => 'text',
+						'desc_tip' => true,
+						'css'      => 'min-width: 350px;',
+						'default'  => __( 'Captcha code error, please try again.', 'user-registration' ),
+					),
+
+					array(
+						'type' => 'sectionend',
+						'id'   => 'frontend_error_messages_settings',
+					),
 				)
 			);
 
@@ -293,10 +320,8 @@ if ( ! class_exists( 'UR_Settings_General' ) ) :
 			if( $current_section === '') {
 				$settings = $this->get_settings();
 
-			
 			} elseif ( $current_section === 'frontend-messages') {
 				$settings = $this->get_frontend_messages_settings();
-
 			}
 			UR_Admin_Settings::output_fields( $settings );
 		}
@@ -312,7 +337,6 @@ if ( ! class_exists( 'UR_Settings_General' ) ) :
 			if( $current_section === '') {
 				$settings = $this->get_settings();
 
-			
 			} elseif ( $current_section === 'frontend-messages') {
 				$settings = $this->get_frontend_messages_settings();
 
