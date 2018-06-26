@@ -25,7 +25,7 @@ function selectExo($connect, $classe=null){
 
     if (isset($classe)) {
         //si set faire la fonction qui cherche par niveau
-        
+
        try{
             $stmt = $connect->prepare("SELECT exos.id, exos.titre, exos.enonce,exos.reponse, exos.url_img, infos.auteur
                 FROM exos
@@ -57,8 +57,10 @@ function selectExo($connect, $classe=null){
         catch(PDOExeption $e){
             echo "Request failed : " . $e->getMessage();
         }
-    }
 
+    }
+    // $donnee=mysql_fetch_array($stmt);
+    // $idExo=['exos.id'];
 }
 
 

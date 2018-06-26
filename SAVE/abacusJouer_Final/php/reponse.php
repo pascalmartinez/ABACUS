@@ -7,7 +7,7 @@ include '../BDD/ConnectBDD.php';
 $connect=connectDB();
 $score = 0;
 
-function compareReponse($connect, $upScore){
+function compareReponse($connect){
 
 
     $reponse_user = $_POST['reponse_user'];
@@ -33,7 +33,7 @@ function compareReponse($connect, $upScore){
 }
 
 
-    compareReponse($connect,$upScore);
+    compareReponse($connect);
 
 function UpScore ($connect){
 
