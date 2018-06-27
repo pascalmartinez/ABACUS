@@ -1,10 +1,10 @@
 <html>
 	<head>
-		<link rel="stylesheet" href="../compiled/flipclock.css">
+		<link rel="stylesheet" href="compiled/flipclock.css">
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
-		<script src="../compiled/flipclock.js"></script>		
+		<script src="compiled/flipclock.js"></script>
 	</head>
 	<body>
 		<div class="clock" style="margin:2em;"></div>
@@ -15,14 +15,14 @@
 			$(document).ready(function() {
 
 				// Instantiate a counter
-				clock = new FlipClock($('.clock'), 10, {
+				clock = new FlipClock($('.clock'), 200, {
 					clockFace: 'Counter',
 					autoStart: true,
 					countdown: true
 				});
-				
+
 			});
 		</script>
-		
+
 	</body>
-</html> 
+</html>

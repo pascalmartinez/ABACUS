@@ -4,7 +4,9 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="CSS/style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+        <link rel="stylesheet" href="Compte_a_rebours/compiled/flipclock.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="Compte_a_rebours/compiled/flipclock.js"></script>
         <?php
         // include 'header.php';
         include 'BDD/function_select_exo.php';
@@ -39,11 +41,31 @@
                 </div>
             </div>
         </div>
+
+        <div class="container section" >
+            <div class="col-12 clock" ></div>
+        </div>
+        <script type="text/javascript">
+            var clock;
+
+            $(document).ready(function() {
+
+                // Instantiate a counter
+                clock = new FlipClock($('.clock'), 200, {
+                    clockFace: 'Counter',
+                    autoStart: true,
+                    countdown: true
+                });
+
+            });
+        </script>
+
         <div class="container section" >
             <div class="row">
                 <div class="col-6" id="val">
 
                         <?php
+
                         $stmt = selectExo($connect);
                         $stmt = afficherExo($stmt, $connect);
 
@@ -51,6 +73,7 @@
                         ?>
                 </div>
             </div>
+
 
             <div class="container section" >
                 <div class="row">
@@ -65,6 +88,8 @@
                     </div>
                 </div>
             </div>
+
+
 
 
             <!-- <button type="button"  id="buttonNext" onclick= "exo()">Exercice suivant</button> -->
