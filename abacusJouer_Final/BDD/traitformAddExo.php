@@ -24,7 +24,7 @@
 
     //Partie réponse :
     $reponse = $_POST['reponse'];
-    // $idExo=$_GET['id'];
+
 
 
     //Partie score:

@@ -1,8 +1,8 @@
 <?php
  include '../BDD/ConnectBDD.php';
-// include '../exo.php';
+ // include '../exo.php';
 // include '../BDD/traitformAddExo.php';
-// include '../BDD/function_select_exo.php';
+include '../BDD/function_select_exo.php';
 
 
 $connect=connectDB();
@@ -11,11 +11,13 @@ $score = 0;
 function compareReponse($connect){
 
     $reponse_user = $_POST['reponse_user'];
-    $reqReponse =$connect->query("SELECT id, reponse FROM exos ");
-    $data=$reqReponse->fetch();
+    $reponse = $_POST ['reponse'];
+    // $reqReponse =$connect->query("SELECT id, reponse FROM exos ");
 
-    $reponse = $data['reponse'];
-    var_dump($data);
+    // $data=$reqReponse->fetch();
+    //
+    // $reponse = $data['reponse'];
+    // var_dump($data);
 
 
         if ($reponse_user == $reponse ) {

@@ -51,8 +51,8 @@
             $(document).ready(function() {
 
                 // Instantiate a counter
-                clock = new FlipClock($('.clock'), 200, {
-                    clockFace: 'Counter',
+                clock = new FlipClock($('.clock'), 900, {
+                    clockFace: 'MinuteCounter',
                     autoStart: true,
                     countdown: true
                 });
@@ -67,6 +67,8 @@
                         <?php
 
                         $stmt = selectExo($connect);
+
+
                         $stmt = afficherExo($stmt, $connect);
 
                         // echo "balance ton exo!!!";
@@ -86,6 +88,15 @@
                             </div>
                         </form>
                     </div>
+                    <div class="corrige">
+                        <h3>La bonne réponse était</h3>
+                        <?php
+                            $rep = selectExo($connect);
+                            //afficheReponse($rep, $connect);
+
+                        ?>
+
+                    </div>
                 </div>
             </div>
 
@@ -100,6 +111,7 @@
         <script  src="includes/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="js/jqueryExo.js"></script>
         <script type="text/javascript" src="js/selectLevel.js"></script>
+        <script type="text/javascript" src="js/moveAnswer.js"></script>
 
 
 

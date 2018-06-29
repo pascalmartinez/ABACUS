@@ -30,11 +30,30 @@ function afficherSelectNiveau($stmt){
                     <p class='card-subtitle text-center'>"."article proposé par ".$row['auteur']."</p>
                     </div>
                 </div>";
+
+                echo "<div class='rep'>
+
+                 <a>".$row['id'] .">".$row['reponse']."</a>
+
+            </div>";
             }
         }
 
+    function afficheReponse($rep, $connect){
+        //while($row = $rep->fetch()) {
+            // var_dump($rep);
+            echo "
+            <div class='rep' id='rep'>
 
-//SELECT du numéro de l'exo
+                 <a>".$row['id'] .">".$row['reponse']."</a>
+
+            </div>";
+
+       // }
+    }
+
+
+//Affiche le numéro de l'exo
     function afficherNumExo($stmt){
         while($row = $stmt->fetch()) {
 
