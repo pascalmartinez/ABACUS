@@ -26,8 +26,9 @@
     $reponse = $_POST['reponse'];
 
 
+
     //Partie score:
-    
+
 
     //Vérifie si il y a un fichier dans le browser et envoi son chemin à la BDD
     if(isset($_FILES['fichier']['name'])){

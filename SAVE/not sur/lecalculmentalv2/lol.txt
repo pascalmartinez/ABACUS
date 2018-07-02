@@ -1,0 +1,13 @@
+Titre du site : lecalculmental
+Identifiant : root
+MDP: Aformac2017
+
+
+theme WP: Arise
+
+
+BDD:
+
+nom de la BDD: lecalculsmmichel
+Identifiant : root
+MDP: admin
